@@ -12,7 +12,11 @@
   "minimum-stability": "dev",
   "require": {},
   "autoload": {
+    "psr-4": {
+      "Icom\\Importer\\": ""
+    },
     "files": [
+      "registration.php",
       "Model/Import/Source/Icom.php"
     ]
   }

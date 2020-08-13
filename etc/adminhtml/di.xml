@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\File\Uploader">
+        <plugin disabled="false" name="Icom_Importer_Plugin_Backend_Magento_Framework_File_Uploader" sortOrder="10" type="Icom\Importer\Plugin\Backend\Magento\Framework\File\Uploader"/>
+    </type>
+</config>
