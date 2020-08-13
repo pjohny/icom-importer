@@ -1,0 +1,19 @@
+{
+  "name": "icom/module-importer",
+  "description": "",
+  "type": "magento2-module",
+  "license": "OSL-3.0",
+  "authors": [
+    {
+      "name": "J\u00e1nos Pincz\u00e9s",
+      "email": "pjohny16@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "files": [
+      "Model/Import/Source/Icom.php"
+    ]
+  }
+}
