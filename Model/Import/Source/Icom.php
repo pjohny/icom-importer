@@ -41,18 +41,21 @@ class Icom extends \Magento\ImportExport\Model\Import\AbstractSource
     public function __construct(
         $file,
         \Magento\Framework\Filesystem\Directory\Read $directory,
-        $delimiter = ',',
+        $delimiter = '*#*',
         $enclosure = '"'
     ) {
         register_shutdown_function([$this, 'destruct']);
         try {
+
+            $file_contents = file_get_contents($file);
+            $file_contents = str_replace("*#*","|",$file_contents);
+            file_put_contents($file,$file_contents);
+
             $this->_file = $directory->openFile($directory->getRelativePath($file), 'r');
         } catch (\Magento\Framework\Exception\FileSystemException $e) {
             throw new \LogicException("Unable to open file: '{$file}'");
         }
-        if ($delimiter) {
-            $this->_delimiter = $delimiter;
-        }
+        $this->_delimiter = "|";
         $this->_enclosure = $enclosure;
         parent::__construct($this->_getNextRow());
     }
@@ -101,5 +104,13 @@ class Icom extends \Magento\ImportExport\Model\Import\AbstractSource
         $this->_getNextRow();
         // skip first line with the header
         parent::rewind();
+    }
+
+    private function prependFile($prependString, $filePath)
+    {
+        $handle = fopen($filePath, "r+");
+        $len = strlen($prependString);
+        $final_len = filesize($filePath) + $len;
+        $cache_old = fread($handle, $len);
     }
 }

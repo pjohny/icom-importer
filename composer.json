@@ -3,14 +3,11 @@
   "description": "",
   "type": "magento2-module",
   "license": "OSL-3.0",
-  "authors": [
-    {
-      "name": "J\u00e1nos Pincz\u00e9s",
-      "email": "pjohny16@gmail.com"
-    }
-  ],
+  "authors": [],
   "minimum-stability": "dev",
-  "require": {},
+  "require": {
+    "magento/framework": "102.0.*"
+  },
   "autoload": {
     "psr-4": {
       "Icom\\Importer\\": ""
@@ -19,5 +16,6 @@
       "registration.php",
       "Model/Import/Source/Icom.php"
     ]
-  }
+  },
+  "version": "1.0.0.1"
 }
