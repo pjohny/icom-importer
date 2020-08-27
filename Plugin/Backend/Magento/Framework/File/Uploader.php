@@ -17,6 +17,7 @@ class Uploader
         if(in_array("csv", $extensions) && in_array("zip", $extensions))
         {
             $extensions[] = "icom";
+            $extensions[] = "product";
         }
         return [$extensions];
     }

@@ -3,6 +3,7 @@
     <module name="Icom_Importer" setup_version="1.0.0">
         <sequence>
             <module name="Magento_Framework"/>
+            <module name="Magento_ImportExport"/>
         </sequence>
     </module>
 </config>

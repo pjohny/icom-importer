@@ -14,7 +14,8 @@
     },
     "files": [
       "registration.php",
-      "Model/Import/Source/Icom.php"
+      "Model/Import/Source/Icom.php",
+      "Model/Import/Source/Product.php"
     ]
   },
   "version": "1.0.0.1"
