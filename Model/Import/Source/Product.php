@@ -53,33 +53,33 @@ class Product extends \Magento\ImportExport\Model\Import\Source\Csv
         {
             if($rowData["online_catalog"] == "igen")
             {
-                $rowData["online_catalog"] = __("Yes")->getText();
+                $rowData["online_catalog"] = __("Yes")->render();
             }
             if($rowData["online_catalog"] == "nem")
             {
-                $rowData["online_catalog"] = __("No")->getText();
+                $rowData["online_catalog"] = __("No")->render();
             }
         }
         if(isset($rowData["printed_catalog"]))
         {
             if($rowData["printed_catalog"] == "igen")
             {
-                $rowData["printed_catalog"] = __("Yes")->getText();
+                $rowData["printed_catalog"] = __("Yes")->render();
             }
             if($rowData["printed_catalog"] == "nem")
             {
-                $rowData["printed_catalog"] = __("No")->getText();
+                $rowData["printed_catalog"] = __("No")->render();
             }
         }
         if(isset($rowData["partner_program"]))
         {
             if($rowData["partner_program"] == "igen")
             {
-                $rowData["partner_program"] = __("Yes")->getText();
+                $rowData["partner_program"] = __("Yes")->render();
             }
             if($rowData["partner_program"] == "nem")
             {
-                $rowData["partner_program"] = __("No")->getText();
+                $rowData["partner_program"] = __("No")->render();
             }
         }
         $rowData['short_description'] = implode('<br>', $descriptions);
