@@ -32,7 +32,6 @@ class Product extends \Magento\ImportExport\Model\Import\Source\Csv
         $descriptions = [];
 
         $rowData = parent::current();
-        $rowData["store_view_code"] = null;
         $rowData["product_type"] = "simple";
         $rowData["_attribute_set"] = "Default";
         $rowData["url_key"] = $rowData["sku"];
@@ -80,6 +79,17 @@ class Product extends \Magento\ImportExport\Model\Import\Source\Csv
             if($rowData["partner_program"] == "nem")
             {
                 $rowData["partner_program"] = __("No")->render();
+            }
+        }
+        if(isset($rowData["status"]))
+        {
+            if($rowData["status"] == "aktív")
+            {
+                $rowData["product_online"] = 1;
+            }
+            if($rowData["status"] == "tiltott")
+            {
+                $rowData["product_online"] = 2;
             }
         }
         $rowData['short_description'] = implode('<br>', $descriptions);
