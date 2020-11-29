@@ -36,7 +36,7 @@ class Product extends \Magento\ImportExport\Model\Import\Source\Csv
         $rowData["_attribute_set"] = "Default";
         $rowData["url_key"] = $rowData["sku"];
         $rowData["price"] = str_replace(",", ".", $rowData["price"]);
-        $rowData["product_websites"] = "base";
+        $rowData["product_websites"] = "admin";
         foreach ($this->descriptions as $description_key)
         {
             if(isset($rowData[$description_key]))
